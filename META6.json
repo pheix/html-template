@@ -1,0 +1,14 @@
+{
+    "perl"        : "6.*",
+    "name"        : "HTML::Template",
+    "version"     : "0.0.55",
+    "description" : "A simple almost-port of CPAN's HTML::Template to Raku",
+    "provides"    : {
+        "Text::Escape"            : "lib/Text/Escape.rakumod",
+        "HTML::Template"          : "lib/HTML/Template.rakumod",
+        "HTML::Template::Grammar" : "lib/HTML/Template/Grammar.rakumod"
+    },
+    "depends"     : [ ],
+    "repo-type"   : "git",
+    "source-url"  : "git://github.com/masak/html-template.git"
+}

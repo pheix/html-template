@@ -116,7 +116,7 @@ method substitute( $contents, %params ) {
             if defined $value {
                 warn "Param $key is a { $value.WHAT }" unless $value ~~ Str | Int;
             } else {
-                warn  "Param $key is a undef";
+                #warn "Param $key is a undef";
                 $value = '';
             }
 

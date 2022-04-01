@@ -3,3 +3,4 @@ lib/Test.pm
 *.pir
 *~
 *.swp
+.precomp
