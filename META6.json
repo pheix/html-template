@@ -1,7 +1,7 @@
 {
     "perl"        : "6.*",
     "name"        : "HTML::Template",
-    "version"     : "0.0.55",
+    "version"     : "0.0.56",
     "description" : "A simple almost-port of CPAN's HTML::Template to Raku",
     "provides"    : {
         "Text::Escape"            : "lib/Text/Escape.rakumod",

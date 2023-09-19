@@ -1,0 +1,26 @@
+name: CI
+
+on:
+  push:
+    branches: [ main, master, develop ]
+  pull_request:
+    branches: [ main, master, develop ]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    container:
+      image: rakudo-star:latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Raku version
+        run: raku -v
+
+      - name: Run tests
+        run: prove6 -v -Ilib ./t/
+
+      - name: Install with zef
+        run: zef --verbose install .
