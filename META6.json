@@ -1,5 +1,5 @@
 {
-    "perl"        : "6.*",
+    "raku"        : "6.c",
     "name"        : "HTML::Template",
     "version"     : "0.0.55",
     "description" : "A simple almost-port of CPAN's HTML::Template to Raku",

@@ -13,7 +13,7 @@ HTML::Template - A simple templating system based on the HTML::Template of Perl 
 
 eg/index.raku looks like this:
 
-  use v6;
+  use v6.c;
 
   use HTML::Template;
 

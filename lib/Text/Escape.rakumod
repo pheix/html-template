@@ -1,4 +1,4 @@
-use v6;
+use v6.c;
 unit module Text::Escape;
 
 sub escape($str, $how) is export {

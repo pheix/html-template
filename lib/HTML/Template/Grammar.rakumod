@@ -1,4 +1,4 @@
-use v6;
+use v6.c;
 # RAKUDO: It is uncertain whether a 'grammar' keyword can start a file, just
 #         like 'class' can.
 
