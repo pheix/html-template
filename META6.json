@@ -1,7 +1,8 @@
 {
     "raku"        : "6.c",
     "name"        : "HTML::Template",
-    "version"     : "0.0.55",
+    "auth"        : "zef:2colours",
+    "version"     : "0.0.1",
     "description" : "A simple almost-port of CPAN's HTML::Template to Raku",
     "provides"    : {
         "Text::Escape"            : "lib/Text/Escape.rakumod",
@@ -9,6 +10,5 @@
         "HTML::Template::Grammar" : "lib/HTML/Template/Grammar.rakumod"
     },
     "depends"     : [ ],
-    "repo-type"   : "git",
-    "source-url"  : "git://github.com/masak/html-template.git"
+    "source-url"  : "https://github.com/pheix/html-template.git"
 }
