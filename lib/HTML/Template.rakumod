@@ -11,7 +11,7 @@ HTML::Template - A simple templating system based on the HTML::Template of Perl 
 
 =head1 SYNOPSIS
 
-eg/index.pl6 looks like this:
+eg/index.raku looks like this:
 
   use v6;
 
