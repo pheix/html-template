@@ -104,17 +104,35 @@ method substitute( $contents, %params ) {
 
         if $chunk<directive><insertion> -> $i {
             my $key = ~$i<attributes><name><val>;
-
             my $value;
+
             if (defined %params{$key}) {
                 $value = %params{$key};
             } else {
-                $value = %!params{$key};
+                if (defined(%!params{$key})) {
+                    $value = %!params{$key};
+                }
+                else {
+                    if $key ~~ /\./ {
+                        my $p = %params;
+
+                        for $key.split(q{.}, :skip-empty) -> $k {
+                            if $p{$k} ~~ Hash {
+                                $p = $p{$k};
+                            }
+                            else {
+                                $value = $p{$k};
+
+                                last;
+                            }
+                        }
+                    }
+                }
             }
 
             # RAKUDO: Scalar type not implemented yet
             if defined $value {
-                warn "Param $key is a { $value.WHAT }" unless $value ~~ Str | Int;
+                warn "Param $key is a { $value.^name }" unless $value ~~ Str | Int;
             } else {
                 #warn "Param $key is a undef";
                 $value = '';

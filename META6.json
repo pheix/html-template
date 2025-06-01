@@ -2,7 +2,7 @@
     "raku"        : "6.c",
     "name"        : "HTML::Template",
     "auth"        : "zef:2colours",
-    "version"     : "0.0.1",
+    "version"     : "0.0.2",
     "description" : "A simple almost-port of CPAN's HTML::Template to Raku",
     "provides"    : {
         "Text::Escape"            : "lib/Text/Escape.rakumod",

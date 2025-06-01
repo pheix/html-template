@@ -1,7 +1,7 @@
 use v6.c;
 
 use Test;
-plan 33;
+plan 37;
 
 use HTML::Template;
 
@@ -118,6 +118,18 @@ my @inputs_that_should_parse =
 
     [ 'pre<TMPL_VAR NAME="BAR">post', { 'BAR' => 50 },
       'pre50post', 'simple variable insertion with quoted name' ],
+
+    [ 'pre<TMPL_VAR NAME="bar.foo.value">post', { 'bar' => { foo => { value => 969 } } },
+      'pre969post', 'simple variable insertion from nested hash' ],
+
+    [ 'pre<TMPL_VAR NAME="BAR.FOO.VALUE">post', { 'BAR' => { FOO => { VALUE => 969 } } },
+      'pre969post', 'simple variable insertion from nested hash (CAPS)' ],
+
+    [ 'pre<TMPL_VAR NAME="BAR.FOO.VALUE">post', { 'BAR.FOO.VALUE' => 696 },
+      'pre696post', 'backward compatibility: variable insertion from hash (key with dots)' ],
+
+    [ 'pre<TMPL_VAR NAME="BAR.FOO.VALUE">post', { 'BAR' => { FOO => { VALUE => [1, 2, 3] } } },
+      'pre1 2 3post', 'variable insertion of wrong type from nested hash' ],
 ;
 
 my @inputs_that_should_not_parse = (
